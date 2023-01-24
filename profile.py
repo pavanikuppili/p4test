@@ -12,7 +12,9 @@ link1 = request.Link(members = [node1, node2])
 
 #node1.addService(rspec.Install(url="https://github.com/PavaniKRao/p4test/blob/main/pr.sh", path="/root"))
 #node2.addService(rspec.Install(url="https://github.com/PavaniKRao/p4test/blob/main/pr.sh", path="/root"))
-node1.addService(rspec.Execute(shell="sh", command="/local/repository/pr.sh"))
-node2.addService(rspec.Execute(shell="sh", command="/local/repository/pr.sh"))
+node1.addService(rspec.Execute(shell="bash", command="chmod +x /local/repository/pr.sh"))
+node1.addService(rspec.Execute(shell="bash", command="/local/repository/pr.sh"))
+node2.addService(rspec.Execute(shell="bash", command="chmod +x /local/repository/pr.sh"))
+node2.addService(rspec.Execute(shell="bash", command="/local/repository/pr.sh"))
 
 portal.context.printRequestRSpec()
