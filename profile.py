@@ -1,7 +1,15 @@
+
 # Import the Portal object.
 import geni.portal as portal
 # Import the ProtoGENI library.
 import geni.rspec.pg as pg
+# Import the Emulab specific extensions.
+import geni.rspec.emulab as emulab
+# Import Geni URN
+import geni.urn as urn
+# Import Cloudlab
+import geni.aggregate.cloudlab as cloudlab
+
 
 # Create a portal context.
 pc = portal.Context()
@@ -12,6 +20,9 @@ request = pc.makeRequestRSpec()
 # Add a raw PC to the request.
 node1 = request.RawPC("node1")
 node2 = request.RawPC("node2")
+
+node1.hardware_type = 'xl170'
+node2.hardware_type = 'xl170'
 
 link = request.Link(members = [node1, node2])
 
