@@ -10,7 +10,7 @@ node2 = request.RawPC("node2")
 
 link1 = request.Link(members = [node1, node2])
 
-node1.addService(rspec.Execute(shell="sh", command="sudo apt-get update && sudo apt-get install libxml2-dev pkg-config && sudo git -C ../../root/ clone https://gitlab.flux.utah.edu/amaricq/SLANG-probed.git &&  sudo -i"))
-node2.addService(rspec.Execute(shell="sh", command="sudo apt-get update && sudo apt-get install libxml2-dev pkg-config && sudo git -C ../../root/ clone https://gitlab.flux.utah.edu/amaricq/SLANG-probed.git &&  sudo -i"))
+node1.addService(rspec.Execute(shell="sh", command="/local/repository/pr.sh"))
+node2.addService(rspec.Execute(shell="sh", command="/local/repository/pr.sh"))
 
 portal.context.printRequestRSpec()
