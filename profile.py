@@ -21,3 +21,7 @@ node2.addService(pg.Execute(shell="sh", command="mkdir /local/repository/HELLO")
 
 # Print the RSpec to the enclosing page.
 pc.printRequestRSpec(request)
+
+
+#! /bin/sh
+sudo apt-get update && sudo apt-get install libxml2-dev pkg-config && sudo git -C /root/ clone https://gitlab.flux.utah.edu/amaricq/SLANG-probed.git && cd /root/SLANG-probed && autoreconf -i && ./configure && make
