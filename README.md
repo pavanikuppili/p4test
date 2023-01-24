@@ -1,4 +1,5 @@
 # p4test
+This profile will create a two node LAN topology of xl170 hosts with probed package preinstalled on each node.
 p4 profiles
 
 
