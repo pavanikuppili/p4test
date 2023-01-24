@@ -1,20 +1,21 @@
+# Import the Portal object.
 import geni.portal as portal
-import geni.rspec.pg as rspec
+# Import the ProtoGENI library.
+import geni.rspec.pg as pg
 
-request = portal.context.makeRequestRSpec()
+# Create a portal context.
+pc = portal.Context()
 
-# Create two raw "PC" nodes
+# Create a Request object to start building the RSpec.
+request = pc.makeRequestRSpec()
+ 
+# Add a raw PC to the request.
 node1 = request.RawPC("node1")
 node2 = request.RawPC("node2")
 
+# Install and execute a script that is contained in the repository.
+node1.addService(pg.Execute(shell="sh", command="/local/repository/pr.sh"))
+node2.addService(pg.Execute(shell="sh", command="/local/repository/pr.sh"))
 
-link1 = request.Link(members = [node1, node2])
-
-#node1.addService(rspec.Install(url="https://github.com/PavaniKRao/p4test/blob/main/pr.sh", path="/root"))
-#node2.addService(rspec.Install(url="https://github.com/PavaniKRao/p4test/blob/main/pr.sh", path="/root"))
-node1.addService(rspec.Execute(shell="bash", command="chmod +x /local/repository/pr.sh"))
-node1.addService(rspec.Execute(shell="bash", command="/local/repository/pr.sh"))
-node2.addService(rspec.Execute(shell="bash", command="chmod +x /local/repository/pr.sh"))
-node2.addService(rspec.Execute(shell="bash", command="/local/repository/pr.sh"))
-
-portal.context.printRequestRSpec()
+# Print the RSpec to the enclosing page.
+pc.printRequestRSpec(request)
