@@ -31,8 +31,9 @@ node1.addService(pg.Execute(shell="sh", command="sudo apt-get update -y && sudo 
 node1.addService(pg.Execute(shell="sh", command="sudo bash -c 'cd /root/probed ; ./configure ; make'"))
 node1.addService(pg.Execute(shell="sh", command="sudo bash -c 'cp /root/probed/probed /usr/local/bin/'"))
 
-#node2.addService(pg.Execute(shell="sh", command="sudo apt-get update -y && sudo apt-get install libxml2-dev pkg-config -y && sudo git -C /root/ clone https://gitlab.flux.utah.edu/amaricq/SLANG-probed.git && sudo autoreconf -i /root/SLANG-probed/ "))
-#node2.addService(pg.Execute(shell="sh", command="sudo bash -c 'cd /root/SLANG-probed ; ./configure ; make'"))
+node2.addService(pg.Execute(shell="sh", command="sudo apt-get update -y && sudo apt-get install libxml2-dev pkg-config -y && sudo git -C /root/ clone https://github.com/itsiprikshit/probed.git && sudo autoreconf -i /root/probed/ "))
+node2.addService(pg.Execute(shell="sh", command="sudo bash -c 'cd /root/probed ; ./configure ; make'"))
+node2.addService(pg.Execute(shell="sh", command="sudo bash -c 'cp /root/probed/probed /usr/local/bin/'"))
 
 # Print the RSpec to the enclosing page.
 pc.printRequestRSpec(request)
