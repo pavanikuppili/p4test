@@ -40,9 +40,9 @@ link_0.setNoInterSwitchLinks()
 #link_1.setNoInterSwitchLinks()
 
 link_0.addInterface(iface1)
-link_0.addInterface(iface2)
+link_0.addInterface(iface3)
 
-link_1.addInterface(iface3)
+link_1.addInterface(iface2)
 link_1.addInterface(iface4)
 
 #node1.component_id = urn.Node(cloudlab.Utah, "hp197")
