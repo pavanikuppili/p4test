@@ -26,21 +26,23 @@ node2.hardware_type = 'xl170'
 node1.component_id = urn.Node(cloudlab.Utah, "hp197")
 node2.component_id = urn.Node(cloudlab.Utah, "hp199")
 
-#iface1 = node1.addInterface()
+iface1 = node1.addInterface()
 #iface2 = node1.addInterface()
-#iface3 = node2.addInterface()
+iface3 = node2.addInterface()
 #iface4 = node2.addInterface()
 
 
 #link = request.Link(members = [node1, node2])
+
 #link_0 = request.Link(ltype = "L2", members = [node1, node2])
-link_1 = request.Link(ltype = "L1", members = [node1, node2])
+#link_1 = request.Link(ltype = "L1", members = [node1, node2])
 
 
 
-#link_0 = request.Link(ltype = "L1")
-#link_0.addInterface(iface1)
-#link_0.addInterface(iface3)
+
+link_0 = request.L1Link("L1")
+link_0.addInterface(iface1)
+link_0.addInterface(iface3)
 #link_0.setNoInterSwitchLinks()
 #link_0.bandwidth = 1000000000
 
