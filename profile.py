@@ -43,13 +43,11 @@ link_0.addInterface(iface1)
 link_0.addInterface(iface3)
 #link_0.setNoInterSwitchLinks()
 
-link_1 = request.Link(ltype = "L1")
-link_1.addInterface(iface2)
-link_1.addInterface(iface4)
-link_1.setNoInterSwitchLinks()
+#link_1 = request.Link(ltype = "L1")
+#link_1.addInterface(iface2)
+#link_1.addInterface(iface4)
+#link_1.setNoInterSwitchLinks()
 
-#node1.component_id = urn.Node(cloudlab.Utah, "hp197")
-#node2.component_id = urn.Node(cloudlab.Utah, "hp199")
 
 # Install and execute a script that is contained in the repository.
 node1.addService(pg.Execute(shell="sh", command="sudo apt-get update -y && sudo apt-get install libxml2-dev pkg-config -y && sudo git -C /root/ clone https://github.com/itsiprikshit/probed.git && sudo autoreconf -i /root/probed/ "))
