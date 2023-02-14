@@ -37,7 +37,7 @@ node2.component_id = urn.Node(cloudlab.Utah, "hp199")
 link_1 = request.Link(ltype = "L1", members = [node1, node2])
 
 
-#link_1.setNoInterSwitchLinks()
+link_1.setNoInterSwitchLinks()
 #link_0 = request.Link(ltype = "L2")
 #link_0.addInterface(iface1)
 #link_0.addInterface(iface3)
