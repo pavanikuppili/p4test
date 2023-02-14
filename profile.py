@@ -43,9 +43,9 @@ link_0.addInterface(iface1)
 link_0.addInterface(iface3)
 #link_0.setNoInterSwitchLinks()
 
-#link_1 = request.Link(ltype = "L1")
-#link_1.addInterface(iface2)
-#link_1.addInterface(iface4)
+link_1 = request.Link(ltype = "L1")
+link_1.addInterface(iface2)
+link_1.addInterface(iface4)
 #link_1.setNoInterSwitchLinks()
 
 
