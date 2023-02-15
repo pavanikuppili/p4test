@@ -46,6 +46,8 @@ link_0.addInterface(iface3)
 #link_0.setNoInterSwitchLinks()
 #link_0.bandwidth = 1000000000
 
+link_1 = request.Link(ltype = "L2", members = [node1, node2])
+
 #link_1 = request.Link(ltype = "L1")
 #link_1.addInterface(iface2)
 #link_1.addInterface(iface4)
