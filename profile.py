@@ -43,7 +43,6 @@ iface3 = node2.addInterface()
 link_0 = request.L1Link("L1")
 link_0.addInterface(iface1)
 link_0.addInterface(iface3)
-link_0.setProperties(bandwidth=10000000)
 #link_0.setNoInterSwitchLinks()
 #link_0.bandwidth = 1000000000
 
