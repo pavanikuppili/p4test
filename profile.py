@@ -59,20 +59,30 @@ link_1.bandwidth = 10000000
 node1.addService(pg.Execute(shell="sh", command="sudo apt-get update -y && sudo apt-get install libxml2-dev pkg-config -y && sudo git -C /root/ clone https://github.com/itsiprikshit/probed.git && sudo autoreconf -i /root/probed/ "))
 node1.addService(pg.Execute(shell="sh", command="sudo bash -c 'cd /root/probed ; ./configure ; make'"))
 node1.addService(pg.Execute(shell="sh", command="sudo bash -c 'cp /root/probed/probed /usr/local/bin/'"))
+
+node1.addService(pg.Execute(shell="sh", command="sudo apt-get install iperf3 -y"))
+
 node1.addService(pg.Execute(shell="sh", command="sudo bash -c 'ifconfig eno50 up'"))
 node1.addService(pg.Execute(shell="sh", command="sudo bash -c 'ifconfig eno50 172.16.1.1'"))
 node1.addService(pg.Execute(shell="sh", command="sudo bash -c 'ifconfig ens1f0 up'"))
 node1.addService(pg.Execute(shell="sh", command="sudo bash -c 'ifconfig ens1f0 192.168.1.1'"))
+node1.addService(pg.Execute(shell="sh", command="sudo bash -c 'ethtool -s ens1f0 speed 10000 duplex full autoneg off'"))
 
+
+#ethtool -s ens1f0 speed 10000 duplex full autoneg off
 
 
 node2.addService(pg.Execute(shell="sh", command="sudo apt-get update -y && sudo apt-get install libxml2-dev pkg-config -y && sudo git -C /root/ clone https://github.com/itsiprikshit/probed.git && sudo autoreconf -i /root/probed/ "))
 node2.addService(pg.Execute(shell="sh", command="sudo bash -c 'cd /root/probed ; ./configure ; make'"))
 node2.addService(pg.Execute(shell="sh", command="sudo bash -c 'cp /root/probed/probed /usr/local/bin/'"))
+
+node2.addService(pg.Execute(shell="sh", command="sudo apt-get install iperf3 -y"))
+
 node2.addService(pg.Execute(shell="sh", command="sudo bash -c 'ifconfig eno50 up'"))
 node2.addService(pg.Execute(shell="sh", command="sudo bash -c 'ifconfig eno50 172.16.1.2'"))
 node2.addService(pg.Execute(shell="sh", command="sudo bash -c 'ifconfig ens1f0 up'"))
 node2.addService(pg.Execute(shell="sh", command="sudo bash -c 'ifconfig ens1f0 192.168.1.2'"))
+node2.addService(pg.Execute(shell="sh", command="sudo bash -c 'ethtool -s ens1f0 speed 10000 duplex full autoneg off'"))
 
 
 
